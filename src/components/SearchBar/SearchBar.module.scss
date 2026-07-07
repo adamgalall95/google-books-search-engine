@@ -1,0 +1,46 @@
+@use "../../scss/mixins/colors" as colors;
+@use "../../scss/mixins/fonts" as fonts;
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 450px;
+  min-width: 350px;
+  padding: 1em;
+
+  background: colors.$panel;
+  border: 3px solid;
+  box-shadow: 0.4em 0.4em 0 #000;
+
+  input {
+    height: 2.5em;
+    width: 65%;
+
+    background: colors.$text;
+    color: colors.$background;
+
+    font-family: fonts.$body-font;
+    font-size: 1em;
+    outline: none;
+  }
+
+  button {
+    height: 2.5em;
+    width: 25%;
+
+    background: colors.$background;
+    color: colors.$text;
+
+    font-family: fonts.$heading-font;
+    font-size: 1em;
+    cursor: pointer;
+
+    &:hover {
+      background: colors.$accent;
+    }
+
+    &:active {
+      transform: translate(0.15em, 0.15em);
+    }
+  }
+}
