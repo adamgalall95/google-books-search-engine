@@ -3,7 +3,7 @@
 @use "./scss/mixins/fonts" as fonts;
 
 .layout {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1em;
