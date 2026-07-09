@@ -12,6 +12,7 @@ export default function SearchBar({ handleSearch }) {
   return (
     <form className={classes.searchBar} onSubmit={handleSubmit}>
       <input
+        className={classes.searchBar__input}
         id="search"
         name="search"
         type="text"
