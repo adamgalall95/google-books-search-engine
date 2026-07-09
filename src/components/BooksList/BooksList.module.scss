@@ -1,0 +1,11 @@
+@use "../../scss/mixins/colors" as colors;
+@use "../../scss/mixins/fonts" as fonts;
+
+.bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+
+  gap: 3em 2em;
+
+  padding: 2em;
+}

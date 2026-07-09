@@ -1,0 +1,51 @@
+@use "../../scss/mixins/colors" as colors;
+@use "../../scss/mixins/fonts" as fonts;
+
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__image {
+    width: 10em;
+    height: 15em;
+    object-fit: cover;
+
+    border-radius: 0.3em;
+
+    box-shadow: 0.3em 0.3em 0 rgba(0, 0, 0, 0.35);
+  }
+
+  &__title {
+    margin: 0;
+
+    color: colors.$text;
+
+    font-family: fonts.$heading-font;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1em;
+
+    max-width: 10em;
+  }
+
+  &__author {
+    margin: 0;
+
+    color: colors.$text;
+
+    font-family: fonts.$body-font;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+
+    max-width: 14em;
+  }
+}

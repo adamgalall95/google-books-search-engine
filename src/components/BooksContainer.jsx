@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import fetchBooks from "../utils/API";
+import BooksList from "./BooksList/BooksList";
 
 export default function BooksContainer({ searchTerm }) {
   const [books, setBooks] = useState(null);
@@ -25,20 +26,7 @@ export default function BooksContainer({ searchTerm }) {
   return (
     <>
       {status === "loading" && <p>Loading books...</p>}
-      {status === "success" && (
-        <ul>
-          {books.items.map((book) => (
-            <li key={book.id}>
-              <h3>{book.volumeInfo.title}</h3>
-              <p>
-                {book.volumeInfo.authors
-                  ? book.volumeInfo.authors.join(", ")
-                  : "No Author"}
-              </p>
-            </li>
-          ))}
-        </ul>
-      )}
+      {status === "success" && <BooksList books={books} />}
       {status === "error" && <p>{error.message}</p>}
     </>
   );
