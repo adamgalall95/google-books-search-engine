@@ -1,6 +1,6 @@
 import classes from "./BookCard.module.scss";
 
-export default function BookCard({ book }) {
+export default function BookCard({ book, onBookClick }) {
   const { title, authors, imageLinks } = book.volumeInfo;
 
   const shortTitle =
@@ -16,11 +16,16 @@ export default function BookCard({ book }) {
 
   return (
     <div className={classes.bookCard}>
-      <img
-        className={classes.bookCard__image}
-        src={imageLinks?.thumbnail}
-        alt={title}
-      />
+      <button
+        className={classes.bookCard__button}
+        onClick={() => onBookClick(book)}
+      >
+        <img
+          className={classes.bookCard__image}
+          src={imageLinks?.thumbnail}
+          alt={title}
+        />
+      </button>
 
       <h3 className={classes.bookCard__title}>{shortTitle}</h3>
 
