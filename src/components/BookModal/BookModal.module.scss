@@ -1,0 +1,64 @@
+@use "../../scss/mixins/colors" as colors;
+@use "../../scss/mixins/fonts" as fonts;
+
+.bookModal {
+  position: relative;
+
+  width: 75%;
+  height: 65%;
+  overflow-y: auto;
+
+  background: colors.$panel;
+
+  padding: 2em;
+  border-radius: 1em;
+
+  color: colors.$background;
+  font-family: fonts.$body-font;
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+  }
+
+  &__title {
+    margin: 0 0 1em;
+
+    font-family: fonts.$heading-font;
+    font-size: 2em;
+  }
+
+  &__info {
+    margin: 0.5em 0;
+  }
+
+  &__description {
+    line-height: 1.5em;
+    margin-top: 1.5em;
+  }
+
+  &__close {
+    position: absolute;
+
+    top: 0.5em;
+    right: 0.5em;
+
+    font-weight: 500;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+
+    color: colors.$background;
+    font-family: fonts.$body-font;
+  }
+}
