@@ -1,5 +1,6 @@
 @use "../../scss/mixins/colors" as colors;
 @use "../../scss/mixins/fonts" as fonts;
+@use "../../scss/mixins/media" as media;
 
 .bookCard {
   display: flex;
@@ -57,5 +58,12 @@
     letter-spacing: 0.05em;
 
     max-width: 14em;
+  }
+
+  @include media.md {
+    &__image {
+      width: 12em;
+      height: 18em;
+    }
   }
 }

@@ -1,8 +1,12 @@
 const API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
-export default async function fetchBooks(searchTerm, APIKey = API_KEY) {
+export default async function fetchBooks(
+  searchTerm,
+  maxResults,
+  APIKey = API_KEY,
+) {
   const response = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchTerm)}&maxResults=20&key=${APIKey}`,
+    `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchTerm)}&maxResults=${maxResults}&key=${APIKey}`,
   );
 
   if (!response.ok) {

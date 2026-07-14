@@ -1,16 +1,18 @@
 @use "../../scss/mixins/colors" as colors;
 @use "../../scss/mixins/fonts" as fonts;
+@use "../../scss/mixins/media" as media;
 
 .bookModal {
   position: relative;
 
-  width: 75%;
-  height: 65%;
+  width: 50%;
+  max-height: 80vh;
+
   overflow-y: auto;
 
   background: colors.$panel;
 
-  padding: 2em;
+  padding: 3em;
   border-radius: 1em;
 
   color: colors.$background;
@@ -48,8 +50,8 @@
   &__close {
     position: absolute;
 
-    top: 0.5em;
-    right: 0.5em;
+    top: 1em;
+    right: 1em;
 
     font-weight: 500;
 
