@@ -4,29 +4,43 @@ import BooksList from "./BooksList/BooksList";
 
 export default function BooksContainer({ searchTerm }) {
   const [books, setBooks] = useState(null);
+  const [totalItems, setTotalItems] = useState(0);
+  const [maxResults, setMaxResults] = useState(10);
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
+  function handleLoadMore() {
+    setMaxResults((current) => current + 10);
+  }
+
   useEffect(() => {
-    if (searchTerm == "") return;
+    if (!searchTerm) return;
+
     setStatus("loading");
 
-    fetchBooks(searchTerm)
+    fetchBooks(searchTerm, maxResults)
       .then((data) => {
         setBooks(data);
+        setTotalItems(data.totalItems);
         setStatus("success");
-        console.log(data);
       })
       .catch((e) => {
         setError(e);
         setStatus("error");
       });
-  }, [searchTerm]);
+  }, [searchTerm, maxResults]);
 
   return (
     <>
       {status === "loading" && <p>Loading books...</p>}
-      {status === "success" && <BooksList books={books} />}
+      {status === "success" && (
+        <BooksList
+          books={books}
+          totalItems={totalItems}
+          maxResults={maxResults}
+          handleLoadMore={handleLoadMore}
+        />
+      )}
       {status === "error" && <p>{error.message}</p>}
     </>
   );

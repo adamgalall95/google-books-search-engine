@@ -1,11 +1,44 @@
 @use "../../scss/mixins/colors" as colors;
 @use "../../scss/mixins/fonts" as fonts;
+@use "../../scss/mixins/media" as media;
 
 .bookList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  grid-template-columns: repeat(1, 1fr);
 
-  gap: 3em 2em;
+  gap: 3em;
+  padding: 5em;
 
-  padding: 2em;
+  @include media.md {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 4em;
+  }
+
+  @include media.lg {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7em;
+  }
+}
+
+.loadMore {
+  margin: 2em auto;
+  padding: 1em;
+
+  border: none;
+  border-radius: 0.3em;
+
+  background: colors.$panel;
+  color: colors.$background;
+
+  font-family: fonts.$body-font;
+  font-size: 1em;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
