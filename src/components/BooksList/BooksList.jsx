@@ -3,12 +3,7 @@ import BookCard from "../BookCard/BookCard";
 import BookModal from "../BookModal/BookModal";
 import { useState } from "react";
 
-export default function BookList({
-  books,
-  totalItems,
-  maxResults,
-  handleLoadMore,
-}) {
+export default function BookList({ books }) {
   const [selectedBook, setSelectedBook] = useState(null);
 
   return (
@@ -18,11 +13,6 @@ export default function BookList({
           <BookCard key={book.id} book={book} onBookClick={setSelectedBook} />
         ))}
       </div>
-      {maxResults < totalItems && (
-        <button className={classes.loadMore} onClick={handleLoadMore}>
-          Load More
-        </button>
-      )}
       {selectedBook && (
         <BookModal book={selectedBook} onClose={() => setSelectedBook(null)} />
       )}
