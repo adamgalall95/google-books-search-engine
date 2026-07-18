@@ -13,15 +13,15 @@ export default function BookModal({ book, onClose }) {
         <h2 className={classes.bookModal__title}>{title}</h2>
 
         <p className={classes.bookModal__info}>
-          <strong>By:</strong> {authors?.join(", ") || "Unknown"}
+          By: {authors?.join(", ") || "Unknown"}
         </p>
 
         <p className={classes.bookModal__info}>
-          <strong>Published:</strong> {publishedDate || "Unknown"}
+          Published: {publishedDate || "Unknown"}
         </p>
 
         <p className={classes.bookModal__info}>
-          <strong>Genre:</strong> {categories?.join(", ") || "Unknown"}
+          Genre: {categories?.join(", ") || "Unknown"}
         </p>
 
         <p className={classes.bookModal__description}>

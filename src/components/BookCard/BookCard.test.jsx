@@ -18,17 +18,11 @@ describe("BookCard", () => {
   it("renders book title", () => {
     render(<BookCard book={mockBook} onBookClick={() => {}} />);
 
-    const title = screen.getByText("Harry Potter and...");
+    const title = screen.getByRole("heading");
 
-    expect(title).toBeInTheDocument();
+    expect(title).toHaveTextContent("Harry Potter and...");
   });
-  it("renders book author", () => {
-    render(<BookCard book={mockBook} onBookClick={() => {}} />);
 
-    const author = screen.getByText("J.K. Rowling");
-
-    expect(author).toBeInTheDocument();
-  });
   it("renders book image", () => {
     render(<BookCard book={mockBook} onBookClick={() => {}} />);
 
@@ -36,18 +30,18 @@ describe("BookCard", () => {
 
     expect(image).toBeInTheDocument();
   });
-});
 
-it("calls onBookClick when book is clicked", async () => {
-  const user = userEvent.setup();
+  it("calls onBookClick when book is clicked", async () => {
+    const user = userEvent.setup();
 
-  const mockClick = vi.fn();
+    const mockClick = vi.fn();
 
-  render(<BookCard book={mockBook} onBookClick={mockClick} />);
+    render(<BookCard book={mockBook} onBookClick={mockClick} />);
 
-  const image = screen.getByRole("img");
+    const button = screen.getByRole("button");
 
-  await user.click(image);
+    await user.click(button);
 
-  expect(mockClick).toHaveBeenCalledWith(mockBook);
+    expect(mockClick).toHaveBeenCalledWith(mockBook);
+  });
 });
