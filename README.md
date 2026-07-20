@@ -1,16 +1,62 @@
-# React + Vite
+# Booksy - Google Books Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Booksy is a responsive React application that allows users to search the Google Books database and explore book information through a clean, modern interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was built to strengthen my React fundamentals by working with component-based architecture, API integration, state management, asynchronous programming, and React Testing Library.
 
-## React Compiler
+## Screenshot
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Booksy Screenshot](./src/assets/screen_shot.png)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Search books using the Google Books API
+- Responsive grid layout
+- Book cards displaying cover, title and author
+- Book details displayed in a modal
+- Loading and error states
+- Component testing with React Testing Library and Vitest
+
+## Built With
+
+- React
+- Vite
+- SCSS Modules
+- JavaScript (ES6)
+- Google Books API
+- React Testing Library
+- Vitest
+
+## Key Concepts
+
+- React components
+- Props
+- State with `useState`
+- Side effects with `useEffect`
+- API requests using Fetch
+- Async/Await
+- Conditional rendering
+- Component composition
+- React Testing Library
+- Vitest
+
+## How It Works
+
+1. The user enters a book title into the search bar.
+2. A request is sent to the Google Books API.
+3. Matching books are displayed in a responsive grid.
+4. Selecting a book opens a modal with additional information including author, publication date, category and description.
+
+## Future Improvements
+
+- Book favourites
+- Pagination or infinite scrolling
+- Search suggestions
+- Filters by author or category
+- Dark/Light mode
+
+---
+
+This project was completed as part of the \_nology Software Engineering program.
